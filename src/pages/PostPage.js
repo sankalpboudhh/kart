@@ -3,6 +3,11 @@ import React, { useContext, useEffect, useReducer, useState } from "react";
 import { Link, NavLink, useParams } from "react-router-dom";
 import { ThemeContext } from "../ThemeContext.js";
 
+import FormControlLabel from "@material-ui/core/FormControlLabel";
+import Checkbox from "@material-ui/core/Checkbox";
+import Favorite from "@material-ui/icons/Favorite";
+import { FavoriteBorder } from "@material-ui/icons";
+
 const reducer = (state, action) => {
   switch (action.type) {
     case "POST_REQUEST":
@@ -60,25 +65,35 @@ export default function PostPage() {
             </div>
           )}
           {user ? (
-            <button onClick={() => setLike((prev) => !prev)}>
-              {like ? "Liked" : "Like"}
-            </button>
+            // <button onClick={() => setLike((prev) => !prev)}>
+            //   {like ? "Liked" : "Like"}
+            // </button>
+            <FormControlLabel
+              control={
+                <Checkbox
+                  icon={<FavoriteBorder />}
+                  checkedIcon={<Favorite />}
+                  name="checkedH"
+                />
+              }
+              label="Like"
+            />
           ) : (
-            // <FormControlLabel
-            //   control={
-            //     <Checkbox
-            //       icon={<FavoriteBorder />}
-            //       checkedIcon={<Favorite />}
-            //       name="checkedH"
-            //     />
-            //   }
-            //   label="Instagram Like Button"
-            // />
-            <button>
-              <NavLink to="/login" activeClassName="active">
-                Like
-              </NavLink>
-            </button>
+            <FormControlLabel
+              control={
+                <Checkbox
+                  icon={<FavoriteBorder />}
+                  checkedIcon={<Favorite />}
+                  name="checkedH"
+                />
+              }
+              label="Like"
+            />
+            // <button>
+            //   <NavLink to="/login" activeClassName="active">
+            //     Like
+            //   </NavLink>
+            // </button>
           )}
         </div>
         <div className="sidebar">
