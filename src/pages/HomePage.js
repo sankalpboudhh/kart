@@ -98,18 +98,17 @@ export default function HomePage() {
             : "Posts"}
         </h1>
         {loading ? (
-          <div>loading...</div>
+          <div>Loading...</div>
         ) : error ? (
-          <div>Error: {error}</div>
+          <div>Error:{error}</div>
         ) : posts.length === 0 ? (
-          <div>No Post Found</div>
+          <div>No post found</div>
         ) : (
           <ul>
-            {" "}
             {posts.map((post) => (
               <li key={post.id}>
                 <Link to={`/post/${post.id}`}>
-                  <h2>{post.title} </h2>
+                  <h2>{post.title}</h2>
                 </Link>
                 <p>{post.body}</p>
               </li>
@@ -119,18 +118,19 @@ export default function HomePage() {
       </div>
       <div className="sidebar">
         {loadingUsers ? (
-          <div>loading...</div>
+          <div>Loading...</div>
         ) : errorUsers ? (
-          <div>Error: {errorUsers}</div>
-        ) : users.length === -1 ? (
-          <div>No User Found</div>
+          <div>Error:{errorUsers}</div>
+        ) : users.length === 0 ? (
+          // <div> {user.length} </div>
+          <div>No user found</div>
         ) : userId ? (
           <div>
-            <h2>{user.name}'s Profile </h2>
+            <h2>{user.name}'s Profile</h2>
             <ul>
-              <li>Email: {user.email} </li>
-              <li>Phone: {user.phone} </li>
-              <li>Website: {user.website} </li>
+              <li>Email: {user.email}</li>
+              <li>Phone: {user.phone}</li>
+              <li>Website: {user.website}</li>
             </ul>
           </div>
         ) : (

@@ -65,35 +65,35 @@ export default function PostPage() {
             </div>
           )}
           {user ? (
-            // <button onClick={() => setLike((prev) => !prev)}>
-            //   {like ? "Liked" : "Like"}
-            // </button>
-            <FormControlLabel
-              control={
-                <Checkbox
-                  icon={<FavoriteBorder />}
-                  checkedIcon={<Favorite />}
-                  name="checkedH"
-                />
-              }
-              label="Like"
-            />
+            <button onClick={() => setLike((prev) => !prev)}>
+              {like ? "Liked" : "Like"}
+            </button>
           ) : (
-            <FormControlLabel
-              control={
-                <Checkbox
-                  icon={<FavoriteBorder />}
-                  checkedIcon={<Favorite />}
-                  name="checkedH"
-                />
-              }
-              label="Like"
-            />
-            // <button>
-            //   <NavLink to="/login" activeClassName="active">
-            //     Like
-            //   </NavLink>
-            // </button>
+            // <FormControlLabel
+            //   control={
+            //     <Checkbox
+            //       icon={<FavoriteBorder />}
+            //       checkedIcon={<Favorite />}
+            //       name="checkedH"
+            //     />
+            //   }
+            //   label="Like"
+            // />
+            // <FormControlLabel
+            //   control={
+            //     <Checkbox
+            //       icon={<FavoriteBorder />}
+            //       checkedIcon={<Favorite />}
+            //       name="checkedH"
+            //     />
+            //   }
+            //   label="Like"
+            // />
+            <button>
+              <NavLink to="/login" activeClassName="active">
+                Like
+              </NavLink>
+            </button>
           )}
         </div>
         <div className="sidebar">

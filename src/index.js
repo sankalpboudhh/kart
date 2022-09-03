@@ -10,8 +10,8 @@ import LikeButton from "./LikeButton.js";
 ReactDOM.render(
   <React.StrictMode>
     <ThemeContextProvider>
-      {/* <App /> */}
-      <LikeButton />
+      <App />
+      {/* <LikeButton /> */}
     </ThemeContextProvider>
   </React.StrictMode>,
   document.getElementById("root")
